@@ -2,7 +2,7 @@
   (:use [clojure.string :only [join]]))
 
 (defn char-range [[first-char end-char]]
-  (map char (range (int first-char) (int end-char))))
+  (map char (range (int first-char) (inc (int end-char)))))
 
 (def key-characters
   (apply concat (map char-range [[\0 \9] [\a \z] [\A \Z]])))
